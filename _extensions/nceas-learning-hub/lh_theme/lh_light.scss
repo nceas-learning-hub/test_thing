@@ -254,3 +254,21 @@ div.callout-example.callout {
 div.callout-example.callout-style-default > .callout-header {
   background-color: $lh-pur-0;
 }
+
+// why won't this work in scss
+/*
+.quarto-title-block .quarto-title-banner {
+  // multiple background images - first (NCEAS logo) on top, then hex, then
+  // linear gradient underneath
+  background-image: url(_extensions/nceas-learning-hub/lh_theme/logo-nceas.svg),
+                    url(_extensions/nceas-learning-hub/lh_theme/logo-lh-hex.png),
+                    linear-gradient(to top right, #5C9341, #167B62, #0C4537, #000000);
+  // Then the options apply to each image in turn.  The last (100% 200px) sets
+  // both the width (100%) and height (200px) of the gradient to fit the block
+  background-size: 75px, 100px, 100% 100px;
+  background-position: 10%, 90%, left;
+  background-repeat: no-repeat, no-repeat;
+  background-origin: content-box;
+  height: 100px;
+}
+*/

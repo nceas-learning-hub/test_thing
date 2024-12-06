@@ -93,40 +93,5 @@
     "crumbs": [
       "About the course"
     ]
-  },
-  {
-    "objectID": "slides/r_programming_introduction/slides.html#title-slide",
-    "href": "slides/r_programming_introduction/slides.html#title-slide",
-    "title": "test_thing (2024-01-01 - 2024-12-31)",
-    "section": "",
-    "text": "Working with R & RStudio\nAn introduction to programming in R\n\n\nNCEAS Learning Hub coreR May 2025"
-  },
-  {
-    "objectID": "slides/r_programming_introduction/slides.html#welcom-to-r",
-    "href": "slides/r_programming_introduction/slides.html#welcom-to-r",
-    "title": "test_thing (2024-01-01 - 2024-12-31)",
-    "section": "",
-    "text": "Welcome to programming in R\n\n\nR is a great language to learn data-oriented programming because it is widely adopted, user-friendly, and (most importantly) open source!\n\n\n\n\n\nArtwork by Allison Horst\n\n\n\n\n\nSo what is the difference between R and RStudio?"
-  },
-  {
-    "objectID": "slides/r_programming_introduction/slides.html#r-rstudio",
-    "href": "slides/r_programming_introduction/slides.html#r-rstudio",
-    "title": "test_thing (2024-01-01 - 2024-12-31)",
-    "section": "",
-    "text": "R vs RStudio\n\n\n\nR is a knife. You have food to prepare, and the knife is one of the tools that you’ll use to accomplish your task. \nRStudio is the kitchen. RStudio provides a place to do your work!"
-  },
-  {
-    "objectID": "slides/r_programming_introduction/slides.html#rstudio-ide",
-    "href": "slides/r_programming_introduction/slides.html#rstudio-ide",
-    "title": "test_thing (2024-01-01 - 2024-12-31)",
-    "section": "",
-    "text": "RStudio IDE\n\n\nLet’s take a tour of the RStudio interface.\n\n\n\n\n\nQuick Tip: You can change the default location of the panes, among many other things. More information here"
-  },
-  {
-    "objectID": "slides/r_programming_introduction/slides.html#example-code-slide",
-    "href": "slides/r_programming_introduction/slides.html#example-code-slide",
-    "title": "test_thing (2024-01-01 - 2024-12-31)",
-    "section": "",
-    "text": "Example Code\n\n\nCreating an object\n\n# think of this code as someone saying \"important_value gets 12\".\nimportant_value &lt;- 3*4"
   }
 ]
