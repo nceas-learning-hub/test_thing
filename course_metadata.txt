@@ -1,0 +1,6 @@
+course_proj = test_thing
+course_org = nceas-learning-hub
+title = test_thing
+description = test_thing
+start_date = 2024-01-01
+end_date = 2024-12-31

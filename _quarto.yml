@@ -1,0 +1,63 @@
+project:
+  type: website
+  output-dir: docs
+
+filters:
+- nceas-learning-hub/lh_theme
+exercises:  # for custom callouts
+  number: false # does not work...?
+editor: source
+bibliography: book.bib
+
+format:
+  html:
+    theme:
+       light: _extensions/nceas-learning-hub/lh_theme/lh_light.scss
+       dark: _extensions/nceas-learning-hub/lh_theme/lh_dark.scss
+    css: _extensions/nceas-learning-hub/lh_theme/lh-style.css   ### doesn't render NCEAS logo if put in scss file?
+    toc: true
+    number-sections: true
+    title-block-banner: "blue" ### need this here to "turn on" the title-block-banner
+
+website:
+  title: "test_thing (2024-01-01 - 2024-12-31)"
+  reader-mode: false
+  repo-url: https://github.com/nceas-learning-hub/test_thing
+
+  favicon: _extensions/nceas-learning-hub/lh_theme/logo-lh-hex.png # learning hub logo on browser tab
+
+  bread-crumbs: false
+  navbar:
+    right:
+      - text: "Instructors"
+        menu:
+          - text: "Casey O'Hara"
+            href: https://www.oharascience.com/
+      - icon: github
+        href: https://github.com/nceas-learning-hub/test_thing
+        aria-label: GitHub
+
+  sidebar:
+    title: "Training Materials"
+    style: "floating"
+    search: true
+    tools:
+      - icon: house-door-fill
+        href: https://www.nceas.ucsb.edu/learning-hub
+      - icon: twitter
+        href: https://twitter.com/ucsb_nceas
+      - icon: github
+        href: COURSE_URL
+    contents:
+      - index.qmd # preface
+      - section: "Day 1"
+        contents:
+        - s01_r_rstudio_server_setup.qmd  ###  (coreRlessons v2024.11.07)
+
+  page-footer:
+    center: "Copyright \u00a9 2024, NCEAS"
+    ### NCEAS main website footer:
+    # center: "\u00a9 The Regents of the University of California, All Rights Reserved"
+    # could also include license info?
+
+

@@ -1,0 +1,132 @@
+[
+  {
+    "objectID": "s01_r_rstudio_server_setup.html",
+    "href": "s01_r_rstudio_server_setup.html",
+    "title": "RStudio Server Setup",
+    "section": "",
+    "text": "Learning Objectives\n\n\n\n\nPractice creating an R Project\nOrganize an R Project for effective project management\nUnderstand how to move in an R Project using paths and working directories",
+    "crumbs": [
+      "Day 1",
+      "RStudio Server Setup"
+    ]
+  },
+  {
+    "objectID": "s01_r_rstudio_server_setup.html#logon-to-the-rstudio-server",
+    "href": "s01_r_rstudio_server_setup.html#logon-to-the-rstudio-server",
+    "title": "RStudio Server Setup",
+    "section": "1 Logon to the RStudio Server",
+    "text": "1 Logon to the RStudio Server\nTo prevent us from spending most of this lesson troubleshooting the myriad of issues that can arise when setting up the R, RStudio, and git environments, we have chosen to have everyone work on a remote server with all of the software you need installed. We will be using a special kind of RStudio just for servers called RStudio Server. If you have never worked on a remote server before, you can think of it like working on a different computer via the internet. Note that the server has no knowledge of the files on your local filesystem, but it is easy to transfer files from the server to your local computer, and vice-versa, using the RStudio server interface.\n\n\n\n\n\n\nServer Setup\n\n\n\nYou should have received an email prompting you to change your password for your server account. If you did not, please put up a post-it and someone will help you.\nAfter you have successfully changed your password log in at: https://included-crab.nceas.ucsb.edu/",
+    "crumbs": [
+      "Day 1",
+      "RStudio Server Setup"
+    ]
+  },
+  {
+    "objectID": "s01_r_rstudio_server_setup.html#create-an-r-project",
+    "href": "s01_r_rstudio_server_setup.html#create-an-r-project",
+    "title": "RStudio Server Setup",
+    "section": "2 Create an R Project",
+    "text": "2 Create an R Project\nIn this course, we are going to be using an R project to organize our work. An R project is tied to a directory on your local computer, and makes organizing your work and collaborating with others easier.\nThe Big Idea: using an R project is a reproducible research best practice because it bundles all your work within a working directory. Consider your current data analysis workflow. Where do you import you data? Where do you clean and wrangle it? Where do you create graphs, and ultimately, a final report? Are you going back and forth between multiple software tools like Microsoft Excel, JMP, and Google Docs? An R project and the tools in R that we will talk about today will consolidate this process because it can all be done (and updated) in using one software tool, RStudio, and within one R project.\n\n\n\n\n\n\nR Project Setup\n\n\n\n\nIn the “File” menu, select “New Project”\nClick “New Directory”\nClick “New Project”\nUnder “Directory name” type: training_{USERNAME} (i.e. training_vargas)\nLeave “Create Project as subdirectory of:” set to ~\nClick “Create Project”\n\nRStudio should open your new project automatically after creating it. One way to check this is by looking at the top right corner and checking for the project name.",
+    "crumbs": [
+      "Day 1",
+      "RStudio Server Setup"
+    ]
+  },
+  {
+    "objectID": "s01_r_rstudio_server_setup.html#organizing-an-r-project",
+    "href": "s01_r_rstudio_server_setup.html#organizing-an-r-project",
+    "title": "RStudio Server Setup",
+    "section": "3 Organizing an R Project",
+    "text": "3 Organizing an R Project\nWhen starting a new research project, one of the first things I do is create an R Project for it (just like we have here!). The next step is to then populate that project with relevant directories. There are many tools out there that can do this automatically. Some examples are rrtools or usethis::create_package(). The goal is to organize your project so that it is a compendium of your research. This means that the project has all of the digital parts needed to replicate your analysis, like code, figures, the manuscript, and data access.\nSome common directories are:\n\n\n\ndata: where we store our data (often contains subdirectories for raw, processed, and metadata data)\nR: contains scripts with your custom R functions, etc. (some find this name misleading if their work has other scripts beyond the R programming language, in which case they call this directory scripts)\nplots or figs: generated plots, graphs, and figures\ndocs: summaries or reports of analysis or other relevant project information\nscripts: has all scripts where you clean and wrangle data and run your analysis.\n\nDirectory organization will vary from project to project, but the ultimate goal is to create a well organized project for both reproducibility and collaboration.\n\n\n\n\n\n\n\n\n\n\nProject Sub-directories\n\n\n\nFor this week we are going to create 3 folder (directories) in our training_{USERNAME} Rproject.\n\nIn the files pane in RStudio (bottom right), click on Folder button (with a green circle and plus sign) and create 3 new folders: data, plots, scripts.\n\nThe idea here is treat this RProject as an example of how to organize our work.",
+    "crumbs": [
+      "Day 1",
+      "RStudio Server Setup"
+    ]
+  },
+  {
+    "objectID": "s01_r_rstudio_server_setup.html#moving-in-an-r-project-using-paths-working-directories",
+    "href": "s01_r_rstudio_server_setup.html#moving-in-an-r-project-using-paths-working-directories",
+    "title": "RStudio Server Setup",
+    "section": "4 Moving in an R Project using Paths & Working Directories",
+    "text": "4 Moving in an R Project using Paths & Working Directories\n\nNow that we have your project created (and notice we know it’s an R Project because we see a .Rproj file in our Files pane), let’s learn how to move in a project. We do this using paths.\nThere are two types of paths in computing: absolute paths and relative paths.\n\nAn absolute path always starts with the root of your file system and locates files from there. The absolute path to my project directory is: /home/vargas-poulsen/training_vargas\nRelative paths start from some location in your file system that is below the root. Relative paths are combined with the path of that location to locate files on your system. R (and some other languages like MATLAB) refer to the location where the relative path starts as our working directory.\n\nRStudio projects automatically set the working directory to the directory of the project. This means that you can reference files from within the project without worrying about where the project directory itself is. If I want to read in a file from the data directory within my project, I can simply type read.csv(\"data/samples.csv\") as opposed to read.csv(\"/home/vargas-poulsen/training_vargas/data/samples.csv\").\nThis is not only convenient for you, but also when working collaboratively. We will talk more about this later, but if Matt makes a copy of my R project that I have published on GitHub, and I am using relative paths, he can run my code exactly as I have written it, without going back and changing /home/vargas-poulsen/training_vargas/data/samples.csv to /home/jones/training_jones/data/samples.csv.\nNote that once you start working in projects you should basically never need to run the setwd() command. If you are in the habit of doing this, stop and take a look at where and why you do it. Could leveraging the working directory concept of R projects eliminate this need? Almost definitely!\nSimilarly, think about how you work with absolute paths. Could you leverage the working directory of your R project to replace these with relative paths and make your code more portable? Probably!",
+    "crumbs": [
+      "Day 1",
+      "RStudio Server Setup"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "About the course",
+    "section": "",
+    "text": "test_thing",
+    "crumbs": [
+      "About the course"
+    ]
+  },
+  {
+    "objectID": "index.html#nceas-expertise",
+    "href": "index.html#nceas-expertise",
+    "title": "About the course",
+    "section": "1 NCEAS Expertise",
+    "text": "1 NCEAS Expertise\nThe National Center for Ecological Analysis and Synthesis (NCEAS), a research affiliate of UCSB, is a leading expert on interdisciplinary data science and works collaboratively to answer the world’s largest and most complex questions. The NCEAS approach leverages existing data and employs a team science philosophy to squeeze out all potential insights and solutions efficiently - this is called synthesis science.\nNCEAS has over 25 years of success with this model among working groups and environmental professionals. Together with the Delta Science Program and the Delta Stewardship Council we are excited to pass along skills, workflows, mindsets learn throughout the years.\n\n\n\n\n\n\n\nLearning Objectives\n\n\n\n\nEffectively manage data using tidy data practices\nImplement reproducible scientific workflows throughout all aspects of a project\nEstablish best practices and utilize tools like Git & GitHub to optimize your collaboration\nBetter communicate scientific analyses and results using Markdown, GitHub webpages, and R packages like ggplot2 and Shiny\nIncrease your familiarity and confidence with data science tools\n\n\n\n\n1.1 Week’s Schedule",
+    "crumbs": [
+      "About the course"
+    ]
+  },
+  {
+    "objectID": "index.html#code-of-conduct",
+    "href": "index.html#code-of-conduct",
+    "title": "About the course",
+    "section": "2 Code of Conduct",
+    "text": "2 Code of Conduct\nBy participating in this activity you agree to abide by the NCEAS Code of Conduct.",
+    "crumbs": [
+      "About the course"
+    ]
+  },
+  {
+    "objectID": "index.html#about-this-book",
+    "href": "index.html#about-this-book",
+    "title": "About the course",
+    "section": "3 About this book",
+    "text": "3 About this book\nThese written materials are the result of a continuous and collaborative effort at NCEAS to help researchers make their work more transparent and reproducible. This work began in the early 2000’s, and reflects the expertise and diligence of many, many individuals. The primary authors are listed in the citation below, with additional contributors recognized for their role in developing previous iterations of these or similar materials.\nThis work is licensed under a Creative Commons Attribution 4.0 International License.\nCitation: Camila Vargas Poulsen & Angel Chen (2024), NCEAS coreR for Delta Science Program, June 2024, NCEAS Learning Hub. URL https://learning.nceas.ucsb.edu/2024-06-delta.\nAdditional contributors: Ben Bolker, Amber E. Budden, Julien Brun, Samantha Csik, Halina Do-Linh, Natasha Haycock-Chavez, S. Jeanette Clark, Julie Lowndes, Stephanie Hampton, Matt Jone, Samanta Katz, Erin McLean, Bryce Mecum, Deanna Pennington, Karthik Ram, Jim Regetz, Tracy Teal, Daphne Virlar-Knight, Leah Wasser.\nThis is a Quarto book. To learn more about Quarto books visit https://quarto.org/docs/books.",
+    "crumbs": [
+      "About the course"
+    ]
+  },
+  {
+    "objectID": "slides/r_programming_introduction/slides.html#title-slide",
+    "href": "slides/r_programming_introduction/slides.html#title-slide",
+    "title": "test_thing (2024-01-01 - 2024-12-31)",
+    "section": "",
+    "text": "Working with R & RStudio\nAn introduction to programming in R\n\n\nNCEAS Learning Hub coreR May 2025"
+  },
+  {
+    "objectID": "slides/r_programming_introduction/slides.html#welcom-to-r",
+    "href": "slides/r_programming_introduction/slides.html#welcom-to-r",
+    "title": "test_thing (2024-01-01 - 2024-12-31)",
+    "section": "",
+    "text": "Welcome to programming in R\n\n\nR is a great language to learn data-oriented programming because it is widely adopted, user-friendly, and (most importantly) open source!\n\n\n\n\n\nArtwork by Allison Horst\n\n\n\n\n\nSo what is the difference between R and RStudio?"
+  },
+  {
+    "objectID": "slides/r_programming_introduction/slides.html#r-rstudio",
+    "href": "slides/r_programming_introduction/slides.html#r-rstudio",
+    "title": "test_thing (2024-01-01 - 2024-12-31)",
+    "section": "",
+    "text": "R vs RStudio\n\n\n\nR is a knife. You have food to prepare, and the knife is one of the tools that you’ll use to accomplish your task. \nRStudio is the kitchen. RStudio provides a place to do your work!"
+  },
+  {
+    "objectID": "slides/r_programming_introduction/slides.html#rstudio-ide",
+    "href": "slides/r_programming_introduction/slides.html#rstudio-ide",
+    "title": "test_thing (2024-01-01 - 2024-12-31)",
+    "section": "",
+    "text": "RStudio IDE\n\n\nLet’s take a tour of the RStudio interface.\n\n\n\n\n\nQuick Tip: You can change the default location of the panes, among many other things. More information here"
+  },
+  {
+    "objectID": "slides/r_programming_introduction/slides.html#example-code-slide",
+    "href": "slides/r_programming_introduction/slides.html#example-code-slide",
+    "title": "test_thing (2024-01-01 - 2024-12-31)",
+    "section": "",
+    "text": "Example Code\n\n\nCreating an object\n\n# think of this code as someone saying \"important_value gets 12\".\nimportant_value &lt;- 3*4"
+  }
+]
